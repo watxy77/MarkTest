@@ -1,0 +1,6 @@
+*.dll
+*.pdb
+*.exe
+*.rar
+obj
+bin
