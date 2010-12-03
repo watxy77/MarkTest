@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 using HumanResources.Customer;
+using HumanResources.Order;
 
 namespace HumanResources.Candidate
 {
@@ -39,6 +40,14 @@ namespace HumanResources.Candidate
         private void tsmiClientInfo_Click(object sender, EventArgs e)
         {
             FrmCusromerInfo fci = new FrmCusromerInfo(((this.dataGridView1.SelectedRows[0].DataBoundItem as DataRowView).Row as humanresourcesDataSet.vw_recommendedRow).Client_id);
+            fci.MdiParent = this.MdiParent;
+            fci.Show();
+        }
+
+        private void tsmiRecommendedPrc_Click(object sender, EventArgs e)
+        {
+
+            FrmRecommendedPrc fci = new FrmRecommendedPrc(((this.dataGridView1.SelectedRows[0].DataBoundItem as DataRowView).Row as humanresourcesDataSet.vw_recommendedRow).Recommended_Id);
             fci.MdiParent = this.MdiParent;
             fci.Show();
         }

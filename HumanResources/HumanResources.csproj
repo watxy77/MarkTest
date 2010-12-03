@@ -235,6 +235,12 @@
     <Compile Include="Order\FrmRecommended.Designer.cs">
       <DependentUpon>FrmRecommended.cs</DependentUpon>
     </Compile>
+    <Compile Include="Order\FrmRecommendedPrc.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Order\FrmRecommendedPrc.Designer.cs">
+      <DependentUpon>FrmRecommendedPrc.cs</DependentUpon>
+    </Compile>
     <Compile Include="Order\FrmState_remark.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -326,6 +332,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Order\FrmRecommended.resx">
       <DependentUpon>FrmRecommended.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Order\FrmRecommendedPrc.resx">
+      <DependentUpon>FrmRecommendedPrc.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Order\FrmState_remark.resx">
       <DependentUpon>FrmState_remark.cs</DependentUpon>

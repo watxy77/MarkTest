@@ -36,13 +36,13 @@
             this.Advantages = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Inferior = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Recommended_State_Name = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.btnClose = new System.Windows.Forms.Button();
-            this.label1 = new System.Windows.Forms.Label();
-            this.lblCandidateName = new System.Windows.Forms.Label();
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.tsmiClientInfo = new System.Windows.Forms.ToolStripMenuItem();
             this.订单信息ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.推荐过程ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.tsmiRecommendedPrc = new System.Windows.Forms.ToolStripMenuItem();
+            this.btnClose = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
+            this.lblCandidateName = new System.Windows.Forms.Label();
             this.humanresourcesDataSet1 = new HumanResources.humanresourcesDataSet();
             this.tableAdapterManager1 = new HumanResources.humanresourcesDataSetTableAdapters.TableAdapterManager();
             this.candidateTableAdapter1 = new HumanResources.humanresourcesDataSetTableAdapters.candidateTableAdapter();
@@ -120,6 +120,35 @@
             this.Recommended_State_Name.Name = "Recommended_State_Name";
             this.Recommended_State_Name.ReadOnly = true;
             // 
+            // contextMenuStrip1
+            // 
+            this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.tsmiClientInfo,
+            this.订单信息ToolStripMenuItem,
+            this.tsmiRecommendedPrc});
+            this.contextMenuStrip1.Name = "contextMenuStrip1";
+            this.contextMenuStrip1.Size = new System.Drawing.Size(153, 92);
+            // 
+            // tsmiClientInfo
+            // 
+            this.tsmiClientInfo.Name = "tsmiClientInfo";
+            this.tsmiClientInfo.Size = new System.Drawing.Size(152, 22);
+            this.tsmiClientInfo.Text = "客户信息";
+            this.tsmiClientInfo.Click += new System.EventHandler(this.tsmiClientInfo_Click);
+            // 
+            // 订单信息ToolStripMenuItem
+            // 
+            this.订单信息ToolStripMenuItem.Name = "订单信息ToolStripMenuItem";
+            this.订单信息ToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.订单信息ToolStripMenuItem.Text = "订单信息";
+            // 
+            // tsmiRecommendedPrc
+            // 
+            this.tsmiRecommendedPrc.Name = "tsmiRecommendedPrc";
+            this.tsmiRecommendedPrc.Size = new System.Drawing.Size(152, 22);
+            this.tsmiRecommendedPrc.Text = "推荐过程";
+            this.tsmiRecommendedPrc.Click += new System.EventHandler(this.tsmiRecommendedPrc_Click);
+            // 
             // btnClose
             // 
             this.btnClose.Location = new System.Drawing.Point(462, 238);
@@ -146,34 +175,6 @@
             this.lblCandidateName.Name = "lblCandidateName";
             this.lblCandidateName.Size = new System.Drawing.Size(0, 12);
             this.lblCandidateName.TabIndex = 2;
-            // 
-            // contextMenuStrip1
-            // 
-            this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.tsmiClientInfo,
-            this.订单信息ToolStripMenuItem,
-            this.推荐过程ToolStripMenuItem});
-            this.contextMenuStrip1.Name = "contextMenuStrip1";
-            this.contextMenuStrip1.Size = new System.Drawing.Size(125, 70);
-            // 
-            // tsmiClientInfo
-            // 
-            this.tsmiClientInfo.Name = "tsmiClientInfo";
-            this.tsmiClientInfo.Size = new System.Drawing.Size(124, 22);
-            this.tsmiClientInfo.Text = "客户信息";
-            this.tsmiClientInfo.Click += new System.EventHandler(this.tsmiClientInfo_Click);
-            // 
-            // 订单信息ToolStripMenuItem
-            // 
-            this.订单信息ToolStripMenuItem.Name = "订单信息ToolStripMenuItem";
-            this.订单信息ToolStripMenuItem.Size = new System.Drawing.Size(124, 22);
-            this.订单信息ToolStripMenuItem.Text = "订单信息";
-            // 
-            // 推荐过程ToolStripMenuItem
-            // 
-            this.推荐过程ToolStripMenuItem.Name = "推荐过程ToolStripMenuItem";
-            this.推荐过程ToolStripMenuItem.Size = new System.Drawing.Size(124, 22);
-            this.推荐过程ToolStripMenuItem.Text = "推荐过程";
             // 
             // humanresourcesDataSet1
             // 
@@ -270,6 +271,6 @@
         private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
         private System.Windows.Forms.ToolStripMenuItem tsmiClientInfo;
         private System.Windows.Forms.ToolStripMenuItem 订单信息ToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem 推荐过程ToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem tsmiRecommendedPrc;
     }
 }
