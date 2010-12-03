@@ -80,9 +80,28 @@ namespace HumanResources.Customer
         {
             if (e.RowIndex > 0)
             {
-                FrmCusromerInfo fui = new FrmCusromerInfo(((this.dataGridView1.Rows[e.RowIndex].DataBoundItem as DataRowView).Row as humanresourcesDataSet.clientRow).Client_id);
-                fui.MdiParent = this.MdiParent;
-                fui.Show();
+
+                    if (EventCtr != null)
+                    {
+                        humanresourcesDataSet.clientRow checkClient = (this.dataGridView1.SelectedRows[0].DataBoundItem as DataRowView).Row as humanresourcesDataSet.clientRow;
+                        if (string.IsNullOrEmpty(checkClient.Client_name))
+                        {
+                            EventCtr.Text = checkClient.Client_nameE;
+                        }
+                        else
+                        {
+                            EventCtr.Text = checkClient.Client_name;
+                        }
+                        EventCtr.Tag = checkClient.Client_id;
+                        this.Close();
+                    }
+                
+                else
+                {
+                    FrmCusromerInfo fui = new FrmCusromerInfo(((this.dataGridView1.Rows[e.RowIndex].DataBoundItem as DataRowView).Row as humanresourcesDataSet.clientRow).Client_id);
+                    fui.MdiParent = this.MdiParent;
+                    fui.Show();
+                }
             }
             
         }
