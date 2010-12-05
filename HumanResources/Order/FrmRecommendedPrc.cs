@@ -17,7 +17,7 @@ namespace HumanResources.Order
         {
             InitializeComponent();
             this.dataGridView1.AutoGenerateColumns = false;
-            vwrr = this.vw_recommendedTableAdapter1.GetDataByRecommended_Id( recommendedID).SingleOrDefault();
+            vwrr = this.vw_recommendedTableAdapter1.GetDataByRecommended_Id(recommendedID).SingleOrDefault();
             vw_recommended_state_remarkTableAdapter1.FillByRecommended_ID(vwrsrtb,recommendedID);    
         }
         void bind()
