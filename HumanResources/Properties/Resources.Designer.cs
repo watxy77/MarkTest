@@ -60,6 +60,20 @@ namespace HumanResources.Properties {
             }
         }
         
+        internal static System.Drawing.Bitmap gif_48_059 {
+            get {
+                object obj = ResourceManager.GetObject("gif_48_059", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        internal static System.Drawing.Bitmap gif_48_103 {
+            get {
+                object obj = ResourceManager.GetObject("gif_48_103", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
         internal static System.Drawing.Bitmap loginbg {
             get {
                 object obj = ResourceManager.GetObject("loginbg", resourceCulture);

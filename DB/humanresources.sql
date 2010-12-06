@@ -1388,7 +1388,7 @@ CREATE TABLE `operationmodel` (
 #
 
 /*!40000 ALTER TABLE `operationmodel` DISABLE KEYS */;
-INSERT INTO `operationmodel` VALUES (1,'销售\r\n销售/制造/研发/服务中心/咨询服务/综合性。。。。。\r\n销售',NULL);
+INSERT INTO `operationmodel` VALUES (1,'销售',NULL);
 INSERT INTO `operationmodel` VALUES (2,'制造',NULL);
 INSERT INTO `operationmodel` VALUES (3,'研发',NULL);
 INSERT INTO `operationmodel` VALUES (4,'服务中心',NULL);
@@ -1641,8 +1641,8 @@ CREATE TABLE `recommended` (
   `Users_ID` int(11) NOT NULL DEFAULT '0',
   `Recommended_State_ID` int(11) NOT NULL DEFAULT '0',
   `Recommended_Order` int(11) NOT NULL DEFAULT '1',
-  `Advantages` varchar(255) DEFAULT NULL,
-  `Inferior` varchar(255) DEFAULT NULL,
+  `Advantages` varchar(2000) DEFAULT NULL,
+  `Inferior` varchar(2000) DEFAULT NULL,
   `Recommended_Time` datetime DEFAULT NULL,
   PRIMARY KEY (`Recommended_Id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=18 DEFAULT CHARSET=gb2312;
@@ -1664,9 +1664,9 @@ INSERT INTO `recommended` VALUES (10,3,4,1,2,3,NULL,NULL,'2009-01-01');
 INSERT INTO `recommended` VALUES (11,2,4,1,2,1,NULL,NULL,'2009-01-01');
 INSERT INTO `recommended` VALUES (12,2,5,1,2,2,NULL,NULL,'2009-01-01');
 INSERT INTO `recommended` VALUES (13,2,8,1,2,3,'123','23231','2009-01-01');
-INSERT INTO `recommended` VALUES (15,1,5,1,2,1,'123','123','2010-11-16 17:17:14');
+INSERT INTO `recommended` VALUES (15,1,5,1,2,1,'342342312312312312312312312312312312312312312312312312312312312312312312312312312312312312312312312312312312312312312312312312312312312312312312312312312312312312312312312312312312312312312312312312312312312312312312312312312312312312312312312312312312312123123123123123123123123123123123123123123123123123123123123123123123123123123123123123123123123123123123123123123123123123123123123123123123123123123123123123123123123123123123123123123123123123123123123123123123123123123123123123123123123123123123123123','123','2010-11-16 17:17:14');
 INSERT INTO `recommended` VALUES (16,5,5,1,2,1,'123','123','2010-11-17 00:38:13');
-INSERT INTO `recommended` VALUES (17,6,1,1,2,1,'123','123',NULL);
+INSERT INTO `recommended` VALUES (17,6,1,1,2,1,'123','123','2010-11-17 00:38:13');
 /*!40000 ALTER TABLE `recommended` ENABLE KEYS */;
 
 #
@@ -1982,6 +1982,71 @@ INSERT INTO `users` VALUES (12,1,'123','8888','dff1113','1','2010-11-18 14:53:45
 /*!40000 ALTER TABLE `users` ENABLE KEYS */;
 
 #
+# Source for table weeklya_details
+#
+
+DROP TABLE IF EXISTS `weeklya_details`;
+CREATE TABLE `weeklya_details` (
+  `WAD_id` int(11) NOT NULL AUTO_INCREMENT COMMENT '助理周报详情编号',
+  `WA_id` int(11) DEFAULT NULL COMMENT '助理周报编号',
+  `WAD_Week` varchar(255) DEFAULT NULL COMMENT '周数',
+  `WCP_id` int(11) DEFAULT NULL COMMENT '助理周报明细编号',
+  `WAD_Targets` int(11) DEFAULT NULL COMMENT '目标',
+  `WAD_Tot` int(11) DEFAULT NULL COMMENT '总量',
+  `WAD_Var` int(11) DEFAULT NULL COMMENT '差额',
+  `WAD_DAM` int(11) DEFAULT NULL COMMENT '周一数量',
+  `WAD_DAT` int(11) DEFAULT NULL COMMENT '周二数量',
+  `WAD_DAW` int(11) DEFAULT NULL COMMENT '周三数量',
+  `WAD_DATH` int(11) DEFAULT NULL COMMENT '周四数量',
+  `WAD_DAF` int(11) DEFAULT NULL COMMENT '周五数量',
+  `WAD_DAS` int(11) DEFAULT NULL COMMENT '周六数量',
+  `WAD_Time` datetime DEFAULT NULL COMMENT '周报生成时间',
+  `Comment` varchar(4000) DEFAULT NULL COMMENT '备注',
+  PRIMARY KEY (`WAD_id`),
+  KEY `FK_WeeklyA_Details_WA_id` (`WA_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=gb2312 COMMENT='顾问周报详情';
+
+#
+# Dumping data for table weeklya_details
+#
+
+/*!40000 ALTER TABLE `weeklya_details` DISABLE KEYS */;
+/*!40000 ALTER TABLE `weeklya_details` ENABLE KEYS */;
+
+#
+# Source for table weeklya_order
+#
+
+DROP TABLE IF EXISTS `weeklya_order`;
+CREATE TABLE `weeklya_order` (
+  `WAO_id` int(11) NOT NULL AUTO_INCREMENT,
+  `WA_id` int(11) DEFAULT NULL,
+  `WAO_week` varchar(255) DEFAULT NULL,
+  `WCP_id` int(11) NOT NULL,
+  `WAO_time` varchar(255) DEFAULT NULL,
+  `WAO_name` varchar(255) DEFAULT NULL,
+  `WAO_position` varchar(255) DEFAULT NULL,
+  `WAO_Bresume` varchar(255) DEFAULT NULL,
+  `WAO_Aresume` varchar(255) DEFAULT NULL,
+  `WAO_Bresume1` varchar(255) DEFAULT NULL,
+  `WAO_Aresume1` varchar(255) DEFAULT NULL,
+  `WAO_Cname` varchar(255) DEFAULT NULL,
+  `WAO_BRSO` varchar(255) DEFAULT NULL,
+  `WAO_ARSO` varchar(255) DEFAULT NULL,
+  `WAO_status` varchar(255) DEFAULT NULL,
+  `Comment` varchar(4000) DEFAULT NULL,
+  PRIMARY KEY (`WAO_id`),
+  KEY `FK_WeeklyA_Order_WA_id` (`WA_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=gb2312 COMMENT='招聘订单具体状态';
+
+#
+# Dumping data for table weeklya_order
+#
+
+/*!40000 ALTER TABLE `weeklya_order` DISABLE KEYS */;
+/*!40000 ALTER TABLE `weeklya_order` ENABLE KEYS */;
+
+#
 # Source for table weeklyc_details
 #
 
@@ -1989,8 +2054,8 @@ DROP TABLE IF EXISTS `weeklyc_details`;
 CREATE TABLE `weeklyc_details` (
   `WCD_id` int(11) NOT NULL AUTO_INCREMENT,
   `WC_id` int(11) DEFAULT NULL,
+  `WCP_id` int(11) DEFAULT NULL,
   `WCD_Week` int(11) DEFAULT NULL,
-  `WCD_Name` varchar(50) DEFAULT NULL,
   `WCD_Targets` int(11) DEFAULT NULL,
   `WCD_Tot` int(11) DEFAULT NULL,
   `WCD_Var` int(11) DEFAULT NULL,
@@ -2004,13 +2069,49 @@ CREATE TABLE `weeklyc_details` (
   `Comment` varchar(4000) DEFAULT NULL,
   PRIMARY KEY (`WCD_id`),
   KEY `FK_WeeklyC_Details_WC_id` (`WC_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=gb2312;
+) ENGINE=InnoDB AUTO_INCREMENT=638 DEFAULT CHARSET=gb2312;
 
 #
 # Dumping data for table weeklyc_details
 #
 
 /*!40000 ALTER TABLE `weeklyc_details` DISABLE KEYS */;
+INSERT INTO `weeklyc_details` VALUES (602,44,1,49,100,100,0,-100,0,0,0,0,0,'2010-12-01 03:10:10',NULL);
+INSERT INTO `weeklyc_details` VALUES (603,44,2,49,200,200,0,-200,0,0,0,0,0,'2010-12-01 03:10:10',NULL);
+INSERT INTO `weeklyc_details` VALUES (604,44,3,49,300,300,0,-300,0,0,0,0,0,'2010-12-01 03:10:10',NULL);
+INSERT INTO `weeklyc_details` VALUES (605,44,5,49,500,500,0,-500,0,0,0,0,0,'2010-12-01 03:10:10',NULL);
+INSERT INTO `weeklyc_details` VALUES (606,44,6,49,600,600,0,-600,0,0,0,0,0,'2010-12-01 03:10:10',NULL);
+INSERT INTO `weeklyc_details` VALUES (607,44,7,49,700,700,0,-700,0,0,0,0,0,'2010-12-01 03:10:10',NULL);
+INSERT INTO `weeklyc_details` VALUES (608,44,8,49,800,800,0,-800,0,0,0,0,0,'2010-12-01 03:10:10',NULL);
+INSERT INTO `weeklyc_details` VALUES (609,44,14,49,904,904,0,-904,0,0,0,0,0,'2010-12-01 03:10:10',NULL);
+INSERT INTO `weeklyc_details` VALUES (610,44,15,49,905,905,0,-905,0,0,0,0,0,'2010-12-01 03:10:10',NULL);
+INSERT INTO `weeklyc_details` VALUES (611,44,16,49,906,906,0,-906,0,0,0,0,0,'2010-12-01 03:10:10',NULL);
+INSERT INTO `weeklyc_details` VALUES (612,44,4,49,400,400,15,-385,1,2,3,4,5,'2010-12-01 03:10:10',NULL);
+INSERT INTO `weeklyc_details` VALUES (613,44,9,49,900,900,1,-899,0,0,1,0,0,'2010-12-01 03:10:10',NULL);
+INSERT INTO `weeklyc_details` VALUES (614,44,10,49,901,901,0,-901,0,0,1,0,0,'2010-12-01 03:10:10',NULL);
+INSERT INTO `weeklyc_details` VALUES (615,44,11,49,902,902,0,-902,0,0,0,0,0,'2010-12-01 03:10:10',NULL);
+INSERT INTO `weeklyc_details` VALUES (616,44,12,49,903,903,0,-903,0,0,0,0,0,'2010-12-01 03:10:10',NULL);
+INSERT INTO `weeklyc_details` VALUES (617,44,17,49,907,907,0,-907,0,0,0,0,0,'2010-12-01 03:10:10',NULL);
+INSERT INTO `weeklyc_details` VALUES (618,44,18,49,908,908,0,-908,0,0,0,0,0,'2010-12-01 03:10:10',NULL);
+INSERT INTO `weeklyc_details` VALUES (619,44,19,49,909,909,0,-909,0,0,0,0,0,'2010-12-01 03:10:10',NULL);
+INSERT INTO `weeklyc_details` VALUES (620,45,1,49,100,100,0,-100,0,0,0,0,0,'2010-12-01 03:33:02',NULL);
+INSERT INTO `weeklyc_details` VALUES (621,45,2,49,200,200,0,-200,0,0,0,0,0,'2010-12-01 03:33:02',NULL);
+INSERT INTO `weeklyc_details` VALUES (622,45,3,49,300,300,0,-300,0,0,0,0,0,'2010-12-01 03:33:02',NULL);
+INSERT INTO `weeklyc_details` VALUES (623,45,5,49,500,500,0,-500,0,0,0,0,0,'2010-12-01 03:33:02',NULL);
+INSERT INTO `weeklyc_details` VALUES (624,45,6,49,600,600,0,-600,0,0,0,0,0,'2010-12-01 03:33:02',NULL);
+INSERT INTO `weeklyc_details` VALUES (625,45,7,49,700,700,0,-700,0,0,0,0,0,'2010-12-01 03:33:02',NULL);
+INSERT INTO `weeklyc_details` VALUES (626,45,8,49,800,800,0,-800,0,0,0,0,0,'2010-12-01 03:33:02',NULL);
+INSERT INTO `weeklyc_details` VALUES (627,45,14,49,904,904,0,-904,0,0,0,0,0,'2010-12-01 03:33:02',NULL);
+INSERT INTO `weeklyc_details` VALUES (628,45,15,49,905,905,0,-905,0,0,0,0,0,'2010-12-01 03:33:02',NULL);
+INSERT INTO `weeklyc_details` VALUES (629,45,16,49,906,906,0,-906,0,0,0,0,0,'2010-12-01 03:33:02',NULL);
+INSERT INTO `weeklyc_details` VALUES (630,45,4,49,400,400,15,-385,1,2,3,4,5,'2010-12-01 03:33:02',NULL);
+INSERT INTO `weeklyc_details` VALUES (631,45,9,49,900,900,0,-900,0,0,0,0,0,'2010-12-01 03:33:02',NULL);
+INSERT INTO `weeklyc_details` VALUES (632,45,10,49,901,901,0,-901,0,0,0,0,0,'2010-12-01 03:33:02',NULL);
+INSERT INTO `weeklyc_details` VALUES (633,45,11,49,902,902,0,-902,0,0,0,0,0,'2010-12-01 03:33:02',NULL);
+INSERT INTO `weeklyc_details` VALUES (634,45,12,49,903,903,0,-903,0,0,0,0,0,'2010-12-01 03:33:02',NULL);
+INSERT INTO `weeklyc_details` VALUES (635,45,17,49,907,907,0,-907,0,0,0,0,0,'2010-12-01 03:33:02',NULL);
+INSERT INTO `weeklyc_details` VALUES (636,45,18,49,908,908,0,-908,0,0,0,0,0,'2010-12-01 03:33:02',NULL);
+INSERT INTO `weeklyc_details` VALUES (637,45,19,49,909,909,0,-909,0,0,0,0,0,'2010-12-01 03:33:02',NULL);
 /*!40000 ALTER TABLE `weeklyc_details` ENABLE KEYS */;
 
 #
@@ -2022,47 +2123,88 @@ CREATE TABLE `weeklyc_particulars` (
   `WCP_id` int(11) NOT NULL AUTO_INCREMENT,
   `WCP_type` int(11) DEFAULT NULL,
   `WCP_name` varchar(255) DEFAULT NULL,
-  `WCP_value` int(10) DEFAULT NULL,
+  `WCP_value` varchar(255) DEFAULT '',
+  `WCP_F` int(11) DEFAULT NULL,
+  `WCP_E` varchar(255) DEFAULT NULL,
+  `WCP_S` varchar(255) DEFAULT '',
   `Comment` varchar(500) DEFAULT NULL,
   PRIMARY KEY (`WCP_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=31 DEFAULT CHARSET=gb2312;
+) ENGINE=InnoDB AUTO_INCREMENT=43 DEFAULT CHARSET=gb2312;
 
 #
 # Dumping data for table weeklyc_particulars
 #
 
 /*!40000 ALTER TABLE `weeklyc_particulars` DISABLE KEYS */;
-INSERT INTO `weeklyc_particulars` VALUES (1,0,'业务助理提供的简历数量',NULL,NULL);
-INSERT INTO `weeklyc_particulars` VALUES (2,0,'自己寻访到的简历',NULL,NULL);
-INSERT INTO `weeklyc_particulars` VALUES (3,0,'网络上寻找到的简历数量(51job etc，job posting)',NULL,NULL);
-INSERT INTO `weeklyc_particulars` VALUES (4,0,'搜寻到的通讯录份数/组织机构图',NULL,NULL);
-INSERT INTO `weeklyc_particulars` VALUES (5,0,'搜寻到的未来客户的数量',NULL,NULL);
-INSERT INTO `weeklyc_particulars` VALUES (6,0,'在51Job、Chinahr等网络上发布的广告职位数量',NULL,NULL);
-INSERT INTO `weeklyc_particulars` VALUES (7,0,'其它途径的职位发布数量',NULL,NULL);
-INSERT INTO `weeklyc_particulars` VALUES (8,0,'办公室面试数量 BI',NULL,NULL);
-INSERT INTO `weeklyc_particulars` VALUES (9,0,'发给客户的简历数量 RSO',NULL,NULL);
-INSERT INTO `weeklyc_particulars` VALUES (10,0,'客户面试数量 CI',NULL,NULL);
-INSERT INTO `weeklyc_particulars` VALUES (11,0,'新订单的数量 ',NULL,NULL);
-INSERT INTO `weeklyc_particulars` VALUES (12,0,'业务拓展电话数量',NULL,NULL);
-INSERT INTO `weeklyc_particulars` VALUES (13,0,'发出的营销邮件数量',NULL,NULL);
-INSERT INTO `weeklyc_particulars` VALUES (14,0,'发给未来客户的方案计划书的数量',NULL,NULL);
-INSERT INTO `weeklyc_particulars` VALUES (15,0,'客户拜访的数量',NULL,NULL);
-INSERT INTO `weeklyc_particulars` VALUES (16,0,'QP1-Candidate performance with client',NULL,NULL);
-INSERT INTO `weeklyc_particulars` VALUES (17,0,'QP2-BM service with client',NULL,NULL);
-INSERT INTO `weeklyc_particulars` VALUES (18,0,'Qp3-Consultant performance with Candidate',NULL,NULL);
-INSERT INTO `weeklyc_particulars` VALUES (19,1,'找到的目标候选人个数',NULL,NULL);
-INSERT INTO `weeklyc_particulars` VALUES (20,1,'拿到的候选人简历个数',NULL,NULL);
-INSERT INTO `weeklyc_particulars` VALUES (21,1,'有效简历(顾问筛选出来面试)',NULL,NULL);
-INSERT INTO `weeklyc_particulars` VALUES (22,1,'RSO个数',NULL,NULL);
-INSERT INTO `weeklyc_particulars` VALUES (23,1,'面试候选人',NULL,NULL);
-INSERT INTO `weeklyc_particulars` VALUES (24,1,NULL,NULL,NULL);
-INSERT INTO `weeklyc_particulars` VALUES (25,1,NULL,NULL,NULL);
-INSERT INTO `weeklyc_particulars` VALUES (26,1,NULL,NULL,NULL);
-INSERT INTO `weeklyc_particulars` VALUES (27,1,NULL,NULL,NULL);
-INSERT INTO `weeklyc_particulars` VALUES (28,1,NULL,NULL,NULL);
-INSERT INTO `weeklyc_particulars` VALUES (29,1,NULL,NULL,NULL);
-INSERT INTO `weeklyc_particulars` VALUES (30,1,NULL,NULL,NULL);
+INSERT INTO `weeklyc_particulars` VALUES (1,1,'业务助理提供的简历数量','100',1,'F11,G11,H11,I11,J11,K11,L11,M11,N12','11,6|11,9|11,10|11,11|11,12|11,13',NULL);
+INSERT INTO `weeklyc_particulars` VALUES (2,1,'自己寻访到的简历','200',1,'F12,G12,H12,I12,J12,K12,L12,M12,N12','12,6|12,9|12,10|12,11|12,12|12,13',NULL);
+INSERT INTO `weeklyc_particulars` VALUES (3,1,'网络上寻找到的简历数量(51job etc，job posting)','300',1,'F13,G13,H13,I13,J13,K13,L13,M13,N13','13,6|13,9|13,10|13,11|13,12|13,13',NULL);
+INSERT INTO `weeklyc_particulars` VALUES (4,1,'搜寻到的通讯录份数/组织机构图','400',2,'F14,G14,H14,I14,J14,K14,L14,M14,N14','14,6|14,9|14,10|14,11|14,12|14,13',NULL);
+INSERT INTO `weeklyc_particulars` VALUES (5,1,'搜寻到的未来客户的数量','500',1,'F15,G15,H15,I15,J15,K15,L15,M15,N15','15,6|15,9|15,10|15,11|15,12|15,13',NULL);
+INSERT INTO `weeklyc_particulars` VALUES (6,1,'在51Job、Chinahr等网络上发布的广告职位数量','600',1,'F16,G16,H16,I16,J16,K16,L16,M16,N16','16,6|16,9|16,10|16,11|16,12|16,13',NULL);
+INSERT INTO `weeklyc_particulars` VALUES (7,1,'其它途径的职位发布数量','700',1,'F17,G17,H17,I17,J17,K17,L17,M17,N17','17,6|17,9|17,10|17,11|17,12|17,13',NULL);
+INSERT INTO `weeklyc_particulars` VALUES (8,1,'办公室面试数量 BI','800',1,'F20,G20,H20,I20,J20,K20,L20,M20,N20','20,6|20,9|20,10|20,11|20,12|20,13',NULL);
+INSERT INTO `weeklyc_particulars` VALUES (9,1,'发给客户的简历数量 RSO','900',2,'F21,G21,H21,I21,J21,K21,L21,M21,N21','21,6|21,9|21,10|21,11|21,12|21,13',NULL);
+INSERT INTO `weeklyc_particulars` VALUES (10,1,'客户面试数量 CI','901',2,'F22,G22,H22,I22,J22,K22,L22,M22,N22','22,6|22,9|22,10|22,11|22,12|22,13',NULL);
+INSERT INTO `weeklyc_particulars` VALUES (11,1,'新订单的数量','902',2,'F23,G23,H23,I23,J23,K23,L23,M23,N23','23,6|23,9|23,10|23,11|23,12|23,13',NULL);
+INSERT INTO `weeklyc_particulars` VALUES (12,1,'业务拓展电话数量','903',2,'F26,G26,H26,I26,J26,K26,L26,M26,N26','26,6|26,9|26,10|26,11|26,12|26,13',NULL);
+INSERT INTO `weeklyc_particulars` VALUES (14,1,'发出的营销邮件数量','904',1,'F27,G27,H27,I27,J27,K27,L27,M27,N27','27,6|27,9|27,10|27,11|27,12|27,13',NULL);
+INSERT INTO `weeklyc_particulars` VALUES (15,1,'发给未来客户的方案计划书的数量','905',1,'F28,G28,H28,I28,J28,K28,L28,M28,N28','28,6|28,9|28,10|28,11|28,12|28,13',NULL);
+INSERT INTO `weeklyc_particulars` VALUES (16,1,'客户拜访的数量','906',1,'F29,G29,H29,I29,J29,K29,L29,M29,N29','29,6|29,9|29,10|29,11|29,12|29,13',NULL);
+INSERT INTO `weeklyc_particulars` VALUES (17,1,'QP1-Candidate performance with client','907',2,'F31,G31,H31,I31,J31,K31,L31,M31,N31','31,6|31,9|31,10|31,11|31,12|31,13',NULL);
+INSERT INTO `weeklyc_particulars` VALUES (18,1,'QP2-BM service with client','908',2,'F32,G32,H32,I32,J32,K32,L32,M32,N32','32,6|32,9|32,10|32,11|32,12|32,13',NULL);
+INSERT INTO `weeklyc_particulars` VALUES (19,1,'Qp3-Consultant performance with Candidate','909',2,'F33,G33,H33,I33,J33,K33,L33,M33,N33','33,6|33,9|33,10|33,11|33,12|33,13','');
+INSERT INTO `weeklyc_particulars` VALUES (20,1,'Milestone  this week1','请填写',0,'Q25','25,17',NULL);
+INSERT INTO `weeklyc_particulars` VALUES (21,1,'Milestone  this week2','请填写',0,'Q26','26,17',NULL);
+INSERT INTO `weeklyc_particulars` VALUES (22,1,'Milestone  this week3','请填写',0,'Q27','27,17',NULL);
+INSERT INTO `weeklyc_particulars` VALUES (28,1,'Thing to do next week1','请填写',0,'Q29','29,17',NULL);
+INSERT INTO `weeklyc_particulars` VALUES (29,1,'Thing to do next week2','请填写',0,'Q30','30,17',NULL);
+INSERT INTO `weeklyc_particulars` VALUES (30,1,'Thing to do next week3','请填写',0,'Q31','31,17',NULL);
+INSERT INTO `weeklyc_particulars` VALUES (31,2,'找到的目标候选人个数','55',1,'E4,F4,G4,H4,I4,J4,K4,L4','4,4',NULL);
+INSERT INTO `weeklyc_particulars` VALUES (32,2,'拿到的候选人简历个数','44',1,'E5,F5,G5,H5,I5,J5,K5,L5','5,4',NULL);
+INSERT INTO `weeklyc_particulars` VALUES (33,2,'有效简历(顾问筛选出来面试)','33',1,'E6,F6,G6,H6,I6,J6,K6,L6','6,4',NULL);
+INSERT INTO `weeklyc_particulars` VALUES (34,2,'RSO个数','22',1,'E7,F7,G7,H7,I7,J7,K7,L7','7,4',NULL);
+INSERT INTO `weeklyc_particulars` VALUES (35,2,'面试候选人','0',1,'E8,F8,G8,H8,I8,J8,K8,L8','8,4',NULL);
+INSERT INTO `weeklyc_particulars` VALUES (36,2,'上周延续下来的总订单数','',0,'','',NULL);
+INSERT INTO `weeklyc_particulars` VALUES (37,2,'本周从顾问下发的新职位','0',1,'E13,F13,G13,H13,I13,J13,K13,L13','13,4',NULL);
+INSERT INTO `weeklyc_particulars` VALUES (39,2,'过往总Offer个数','',0,'','',NULL);
+INSERT INTO `weeklyc_particulars` VALUES (40,2,'本周offer个数','0',1,'E16,F16,G16,H16,I16,J16,K16,L16','16,4',NULL);
+INSERT INTO `weeklyc_particulars` VALUES (42,2,'招聘订单具体状态','',2,'A22,B22,C22,E22,F22,G22,H22,I22,K22,L22,M22,N22,O22','22,1|22.2|22.3|22,5|22,6|22,7|22,8|22,9|22,11|22,12|22,13|22,14|22,15',NULL);
 /*!40000 ALTER TABLE `weeklyc_particulars` ENABLE KEYS */;
+
+#
+# Source for table wekkly_assistant
+#
+
+DROP TABLE IF EXISTS `wekkly_assistant`;
+CREATE TABLE `wekkly_assistant` (
+  `WA_id` int(11) NOT NULL AUTO_INCREMENT COMMENT '助理周报编号',
+  `User_id` int(11) DEFAULT NULL COMMENT '助理编号',
+  `WA_joinT` datetime DEFAULT NULL COMMENT '加入时间',
+  `WA_week` int(11) DEFAULT NULL COMMENT '周报周数',
+  `WA_month` int(11) DEFAULT NULL COMMENT '周报月份',
+  `WA_useName` varchar(255) DEFAULT NULL COMMENT '支持顾问姓名',
+  `WA_CC` varchar(255) DEFAULT NULL COMMENT 'CC分数',
+  `WA_CV` varchar(255) DEFAULT NULL COMMENT 'CV分数',
+  `WA_BI` varchar(255) DEFAULT NULL COMMENT '有效简历比率',
+  `WA_ROS` varchar(255) DEFAULT NULL COMMENT 'RSO分数',
+  `WA_SP` varchar(255) DEFAULT NULL COMMENT '顾问主管评分',
+  `WA_SUM` varchar(255) DEFAULT NULL COMMENT '总分数',
+  `WA_OrderNum` varchar(255) DEFAULT NULL COMMENT '上周延续下来的总订单数',
+  `WA_OfferNum` varchar(255) DEFAULT NULL COMMENT '过往总Offer个数',
+  `WA_cTime` datetime DEFAULT NULL COMMENT '周报创建时间',
+  `WA_path` varchar(255) DEFAULT NULL COMMENT '周报路径',
+  `Comment` varchar(4000) DEFAULT NULL COMMENT '备注',
+  PRIMARY KEY (`WA_id`)
+) ENGINE=InnoDB AUTO_INCREMENT=17 DEFAULT CHARSET=gb2312 COMMENT='顾问周报';
+
+#
+# Dumping data for table wekkly_assistant
+#
+
+/*!40000 ALTER TABLE `wekkly_assistant` DISABLE KEYS */;
+INSERT INTO `wekkly_assistant` VALUES (16,13,NULL,49,11,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'2010-11-30 04:21:56','e:\\BENCHMARK\\代码1\\代码\\Template\\excel\\assistant\\201011300421548008179.xlsx',NULL);
+/*!40000 ALTER TABLE `wekkly_assistant` ENABLE KEYS */;
 
 #
 # Source for table wekkly_consultant
@@ -2086,13 +2228,15 @@ CREATE TABLE `wekkly_consultant` (
   `WC_Path` varchar(255) DEFAULT NULL,
   `Comment` varchar(500) DEFAULT NULL,
   PRIMARY KEY (`WC_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=gb2312;
+) ENGINE=InnoDB AUTO_INCREMENT=46 DEFAULT CHARSET=gb2312;
 
 #
 # Dumping data for table wekkly_consultant
 #
 
 /*!40000 ALTER TABLE `wekkly_consultant` DISABLE KEYS */;
+INSERT INTO `wekkly_consultant` VALUES (44,13,49,12,0.5,NULL,'请填写','请填写','请填写','请填写','请填写','请填写','2010-12-01 03:10:10','e:\\BENCHMARK\\代码1\\代码\\Template\\excel\\consultant\\201012010310083292668.xlsx',NULL);
+INSERT INTO `wekkly_consultant` VALUES (45,1,49,12,0.5,NULL,'请填写','请填写','请填写','请填写','请填写','请填写','2010-12-01 03:33:01','e:\\BENCHMARK\\代码1\\代码\\Template\\excel\\consultant\\201012010332593736860.xlsx',NULL);
 /*!40000 ALTER TABLE `wekkly_consultant` ENABLE KEYS */;
 
 #
@@ -2154,23 +2298,18 @@ DROP VIEW IF EXISTS `vw_recommended`;
 CREATE ALGORITHM=UNDEFINED SQL SECURITY DEFINER VIEW `vw_recommended` AS select `recommended`.`Recommended_Id` AS `Recommended_Id`,`recommended`.`Order_id` AS `Order_id`,`recommended`.`Users_ID` AS `Users_ID`,`recommended`.`Candidate_id` AS `Candidate_id`,`recommended`.`Recommended_State_ID` AS `Recommended_State_ID`,`recommended`.`Recommended_Order` AS `Recommended_Order`,`recommended`.`Advantages` AS `Advantages`,`recommended`.`Inferior` AS `Inferior`,`recommended`.`Recommended_Time` AS `Recommended_Time`,`recommended_state`.`Recommended_State_Name` AS `Recommended_State_Name`,`users`.`User_realName` AS `User_realName`,`candidate`.`Candidate_name` AS `Candidate_name`,`client`.`Client_id` AS `Client_id`,`client`.`Client_name` AS `Client_name`,`client`.`Client_nameE` AS `Client_nameE`,`orders`.`Order_positionN` AS `Order_positionN` from (((((`recommended` join `recommended_state` on((`recommended`.`Recommended_State_ID` = `recommended_state`.`Recommended_State_Id`))) join `candidate` on((`recommended`.`Candidate_id` = `candidate`.`Candidate_id`))) join `orders` on((`recommended`.`Order_id` = `orders`.`Order_id`))) join `users` on((`candidate`.`User_id` = `users`.`User_id`))) join `client` on((`orders`.`Client_id` = `client`.`Client_id`)));
 
 #
+# Source for view vw_recommended_state_remark
+#
+
+DROP VIEW IF EXISTS `vw_recommended_state_remark`;
+CREATE ALGORITHM=UNDEFINED SQL SECURITY DEFINER VIEW `vw_recommended_state_remark` AS select `recommended_state_remark`.`recommended_state_remark_Id` AS `recommended_state_remark_Id`,`recommended_state_remark`.`recommended_ID` AS `recommended_ID`,`recommended_state_remark`.`recommended_state_ID` AS `recommended_state_ID`,`recommended_state_remark`.`recommended_state_remark_content` AS `recommended_state_remark_content`,`recommended_state_remark`.`recommended_state_remark_Time` AS `recommended_state_remark_Time`,`recommended_state_remark`.`User_ID` AS `User_ID`,`users`.`User_realName` AS `User_realName`,`recommended_state`.`Recommended_State_Name` AS `Recommended_State_Name` from ((`recommended_state_remark` join `recommended_state` on((`recommended_state_remark`.`recommended_state_ID` = `recommended_state`.`Recommended_State_Id`))) join `users` on((`recommended_state_remark`.`User_ID` = `users`.`User_id`)));
+
+#
 # Source for view vw_resume_candidate
 #
 
 DROP VIEW IF EXISTS `vw_resume_candidate`;
 CREATE ALGORITHM=UNDEFINED SQL SECURITY DEFINER VIEW `vw_resume_candidate` AS select `r`.`Resume_id` AS `Resume_id`,`r`.`Candidate_id` AS `Candidate_id`,`r`.`Resume_ShowName` AS `Resume_ShowName`,`r`.`Resume_language` AS `Resume_language`,`r`.`City_id` AS `City_id`,`r`.`City_id1` AS `City_id1`,`r`.`JobsDetail_idArr` AS `JobsDetail_idArr`,`r`.`Trade_IDArr` AS `Trade_IDArr`,`r`.`Experience` AS `Experience`,`r`.`Resume_annual` AS `Resume_annual`,`r`.`Resume_expectation` AS `Resume_expectation`,`r`.`Resume_overseas` AS `Resume_overseas`,`r`.`Resume_evaluate` AS `Resume_evaluate`,`r`.`update_time` AS `update_time`,`c`.`Candidate_name` AS `Candidate_name`,`c`.`Candidate_sex` AS `Candidate_sex`,`c`.`Candidate_birthday` AS `Candidate_birthday`,`c`.`Mingz_id` AS `Mingz_id`,`c`.`Nationality_id` AS `Nationality_id`,`c`.`Candidate_marriage` AS `Candidate_marriage`,`c`.`Candidate_papersT` AS `Candidate_papersT`,`c`.`Candidate_papersN` AS `Candidate_papersN`,`c`.`registered` AS `registered`,`c`.`Candidate_method1` AS `Candidate_method1`,`c`.`Candidate_method2` AS `Candidate_method2`,`c`.`Candidate_telephone` AS `Candidate_telephone`,`c`.`Candidate_Email` AS `Candidate_Email`,`c`.`recommend_mode` AS `recommend_mode`,`c`.`incumbency_mode` AS `incumbency_mode`,`c`.`User_id` AS `User_id` from (`resume` `r` join `candidate` `c` on((`r`.`Candidate_id` = `c`.`Candidate_id`)));
-
-#
-# Source for procedure Pro_DelTeam
-#
-
-DROP PROCEDURE IF EXISTS `Pro_DelTeam`;
-CREATE DEFINER=`root`@`localhost` PROCEDURE `Pro_DelTeam`(`@TeamID` int(11))
-BEGIN
-update users set User_superior_id = 0 where User_superior_id =@TeamID;
-delete from team where Team_ID = 5;
-END;
-
 
 #
 #  Foreign keys for table invoice
@@ -2203,6 +2342,20 @@ ADD CONSTRAINT `FK_Recruitmeity_Client_id` FOREIGN KEY (`Client_id`) REFERENCES 
 
 ALTER TABLE `resume`
 ADD CONSTRAINT `FK_Resume_Candidate_id` FOREIGN KEY (`Candidate_id`) REFERENCES `candidate` (`Candidate_id`);
+
+#
+#  Foreign keys for table weeklya_details
+#
+
+ALTER TABLE `weeklya_details`
+ADD CONSTRAINT `FK_WeeklyA_Details_WA_id` FOREIGN KEY (`WA_id`) REFERENCES `wekkly_assistant` (`WA_id`);
+
+#
+#  Foreign keys for table weeklya_order
+#
+
+ALTER TABLE `weeklya_order`
+ADD CONSTRAINT `FK_WeeklyA_Order_WA_id` FOREIGN KEY (`WA_id`) REFERENCES `wekkly_assistant` (`WA_id`);
 
 #
 #  Foreign keys for table weeklyc_details

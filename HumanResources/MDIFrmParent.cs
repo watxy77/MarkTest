@@ -15,6 +15,7 @@ using HumanResources.Candidate;
 
 
 using HumanResources.Users;
+using HumanResources.WeekReport;
 
 namespace HumanResources
 {
@@ -186,6 +187,34 @@ namespace HumanResources
             FrmTeamManager fos = new FrmTeamManager();
             fos.MdiParent = this;
             fos.Show();
+        }
+
+        private void 顾问周报ToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            wekklyCForm wcf = new wekklyCForm();
+            wcf.MdiParent = this;
+            wcf.Show(); 
+        }
+
+        private void 助理周报ToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            wekklyAForm wcf = new wekklyAForm();
+            wcf.MdiParent = this;
+            wcf.Show(); 
+        }
+
+        private void 助理周报设置ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            wekklySetA aa = new wekklySetA();
+            aa.MdiParent = this;
+            aa.Show();
+        }
+
+        private void 顾问周报设置ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            wekklySetC aa = new wekklySetC();
+            aa.MdiParent = this;
+            aa.Show();
         }
     }
 }
