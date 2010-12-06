@@ -3,7 +3,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProductVersion>9.0.30729</ProductVersion>
+    <ProductVersion>9.0.21022</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>{4F7FE1C8-E44D-4F57-B1F8-2B6E2B18731C}</ProjectGuid>
     <OutputType>WinExe</OutputType>
@@ -35,7 +35,9 @@
     <Reference Include="Microsoft.ReportViewer.WinForms, Version=9.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
     <Reference Include="Microsoft.VisualBasic" />
     <Reference Include="Microsoft.VisualBasic.PowerPacks.Vs, Version=9.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-    <Reference Include="MySql.Data, Version=6.3.5.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d" />
+    <Reference Include="MySql.Data, Version=6.3.5.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d">
+      <HintPath>..\..\BENCHMARK\所需软件\MySql.Data.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Configuration.Install" />
     <Reference Include="System.Core">
@@ -251,93 +253,123 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Analysis\FrmAnalysisOfCustomerDevelopment.resx">
       <DependentUpon>FrmAnalysisOfCustomerDevelopment.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="Analysis\FrmBidRate.resx">
       <DependentUpon>FrmBidRate.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="Analysis\FrmContactsAndResume.resx">
       <DependentUpon>FrmContactsAndResume.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="Candidate\FrmResumeList.resx">
       <DependentUpon>FrmResumeList.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="Candidate\FrmCandidateInfo.resx">
       <DependentUpon>FrmCandidateInfo.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="Candidate\FrmCandidateSearchSemple.resx">
       <DependentUpon>FrmCandidateSearchSemple.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="Candidate\FrmRecommendedHistory.resx">
       <DependentUpon>FrmRecommendedHistory.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="Candidate\FrmResumeAdd.resx">
       <DependentUpon>FrmResumeAdd.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="Candidate\FrmResumeInfo.resx">
       <DependentUpon>FrmResumeInfo.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="Candidate\UCCandidateSearch.resx">
       <DependentUpon>UCCandidateSearch.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="Customer\FrmClientFllowList.resx">
       <DependentUpon>FrmClientFllowList.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="Customer\FrmContractList.resx">
       <DependentUpon>FrmContractList.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="Customer\FrmCusromerInfo.resx">
       <DependentUpon>FrmCusromerInfo.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="Customer\FrmCusromerSearchSemple.resx">
       <DependentUpon>FrmCusromerSearchSemple.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="Customer\FrmCustomerInfoAdd.resx">
       <DependentUpon>FrmCustomerInfoAdd.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="Customer\FrmLinkmanList.resx">
       <DependentUpon>FrmLinkmanList.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="Customer\UcCusromerSearch.resx">
       <DependentUpon>UcCusromerSearch.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="Dictionary\FrmCheckBoxList.resx">
       <DependentUpon>FrmCheckBoxList.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="Dictionary\FrmJobsSelect.resx">
       <DependentUpon>FrmJobsSelect.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="Dictionary\FrmTradeSelect.resx">
       <DependentUpon>FrmTradeSelect.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="Invoice\FrmInvoiceAdd.resx">
       <DependentUpon>FrmInvoiceAdd.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="Invoice\FrmTransactionDetails.resx">
       <DependentUpon>FrmTransactionDetails.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="MDIFrmParent.resx">
       <DependentUpon>MDIFrmParent.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="Order\FrmOrderInfo.resx">
       <DependentUpon>FrmOrderInfo.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="Order\FrmOrderInfoAdd.resx">
       <DependentUpon>FrmOrderInfoAdd.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="Order\FrmOrderListSimple.resx">
       <DependentUpon>FrmOrderListSimple.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="Order\FrmOrderSearch.resx">
       <DependentUpon>FrmOrderSearch.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="Order\FrmRecommended.resx">
       <DependentUpon>FrmRecommended.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="Order\FrmRecommendedPrc.resx">
       <DependentUpon>FrmRecommendedPrc.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="Order\FrmState_remark.resx">
       <DependentUpon>FrmState_remark.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -346,33 +378,59 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Statistics\FrmSalesRank.resx">
       <DependentUpon>FrmSalesRank.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="Users\FrmFront.resx">
       <DependentUpon>FrmFront.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="Users\FrmLogin.resx">
       <DependentUpon>FrmLogin.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="Users\FrmPwdChange.resx">
       <DependentUpon>FrmPwdChange.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="Users\FrmRightsSetUp.resx">
       <DependentUpon>FrmRightsSetUp.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="Users\FrmTeamManager.resx">
       <DependentUpon>FrmTeamManager.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="Users\FrmUserAdd.resx">
       <DependentUpon>FrmUserAdd.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="Users\FrmUserInfo.resx">
       <DependentUpon>FrmUserInfo.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="Users\FrmUserSearch.resx">
       <DependentUpon>FrmUserSearch.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="Users\RelatedList\FrmUserCustomers.resx">
       <DependentUpon>FrmUserCustomers.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="WeekReport\wekklyAForm.resx">
+      <DependentUpon>wekklyAForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="WeekReport\wekklyCForm.resx">
+      <DependentUpon>wekklyCForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="WeekReport\wekklySetA.resx">
+      <DependentUpon>wekklySetA.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="WeekReport\wekklySetC.resx">
+      <DependentUpon>wekklySetC.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -448,6 +506,30 @@
     <Compile Include="Users\RelatedList\FrmUserCustomers.Designer.cs">
       <DependentUpon>FrmUserCustomers.cs</DependentUpon>
     </Compile>
+    <Compile Include="WeekReport\wekklyAForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="WeekReport\wekklyAForm.designer.cs">
+      <DependentUpon>wekklyAForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="WeekReport\wekklyCForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="WeekReport\wekklyCForm.designer.cs">
+      <DependentUpon>wekklyCForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="WeekReport\wekklySetA.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="WeekReport\wekklySetA.designer.cs">
+      <DependentUpon>wekklySetA.cs</DependentUpon>
+    </Compile>
+    <Compile Include="WeekReport\wekklySetC.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="WeekReport\wekklySetC.designer.cs">
+      <DependentUpon>wekklySetC.cs</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />
@@ -492,7 +574,10 @@
     </COMReference>
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="WeekReport\" />
+    <None Include="Resources\gif_48_103.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\gif_48_059.gif" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

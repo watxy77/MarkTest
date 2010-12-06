@@ -124,4 +124,10 @@
   <data name="viewfilefda" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\viewfilefda.png;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="gif_48_103" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\gif_48_103.gif;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="gif_48_059" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\gif_48_059.gif;System.Drawing.Bitmap, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
 </root>
