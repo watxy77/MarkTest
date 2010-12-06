@@ -42,7 +42,8 @@ namespace HumanResources.Users
 
                     if (u.User_pwd == this.txtLoginPWD.Text)
                     {
-                        MDIFrmParent mfp = new MDIFrmParent(u);
+                        //MDIFrmParent mfp = new MDIFrmParent(u);
+                        MainForm mfp = new MainForm(u);
                         mfp.Show();
                         this.Hide();
                     }

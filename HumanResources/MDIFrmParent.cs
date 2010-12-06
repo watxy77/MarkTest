@@ -6,14 +6,14 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
-using HumanResources.Customer;
+
 using System.IO;
 using System.Runtime.Serialization.Formatters.Binary;
-using HumanResources.Order;
 using System.Reflection;
+
+using HumanResources.Order;
 using HumanResources.Candidate;
-
-
+using HumanResources.Customer;
 using HumanResources.Users;
 using HumanResources.WeekReport;
 
