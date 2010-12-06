@@ -118,54 +118,54 @@
             // tsmiUsersList
             // 
             this.tsmiUsersList.Name = "tsmiUsersList";
-            this.tsmiUsersList.Size = new System.Drawing.Size(124, 22);
+            this.tsmiUsersList.Size = new System.Drawing.Size(152, 22);
             this.tsmiUsersList.Text = "用户列表";
             this.tsmiUsersList.Click += new System.EventHandler(this.tsmiUsersList_Click);
             // 
             // tsmiUserSetup
             // 
             this.tsmiUserSetup.Name = "tsmiUserSetup";
-            this.tsmiUserSetup.Size = new System.Drawing.Size(124, 22);
+            this.tsmiUserSetup.Size = new System.Drawing.Size(152, 22);
             this.tsmiUserSetup.Text = "用户设置";
             this.tsmiUserSetup.Click += new System.EventHandler(this.tsmiUserSetup_Click);
             // 
             // tsmiTeamManager
             // 
             this.tsmiTeamManager.Name = "tsmiTeamManager";
-            this.tsmiTeamManager.Size = new System.Drawing.Size(124, 22);
+            this.tsmiTeamManager.Size = new System.Drawing.Size(152, 22);
             this.tsmiTeamManager.Text = "团队管理";
             this.tsmiTeamManager.Click += new System.EventHandler(this.tsmiTeamManager_Click);
             // 
             // tsmiRightsSetup
             // 
             this.tsmiRightsSetup.Name = "tsmiRightsSetup";
-            this.tsmiRightsSetup.Size = new System.Drawing.Size(124, 22);
+            this.tsmiRightsSetup.Size = new System.Drawing.Size(152, 22);
             this.tsmiRightsSetup.Text = "权限设置";
             this.tsmiRightsSetup.Click += new System.EventHandler(this.tsmiRightsSetup_Click);
             // 
             // tsmiPWDChange
             // 
             this.tsmiPWDChange.Name = "tsmiPWDChange";
-            this.tsmiPWDChange.Size = new System.Drawing.Size(124, 22);
+            this.tsmiPWDChange.Size = new System.Drawing.Size(152, 22);
             this.tsmiPWDChange.Text = "修改密码";
             this.tsmiPWDChange.Click += new System.EventHandler(this.tsmiPWDChange_Click);
             // 
             // toolStripMenuItem1
             // 
             this.toolStripMenuItem1.Name = "toolStripMenuItem1";
-            this.toolStripMenuItem1.Size = new System.Drawing.Size(121, 6);
+            this.toolStripMenuItem1.Size = new System.Drawing.Size(149, 6);
             // 
             // 重新登录ToolStripMenuItem
             // 
             this.重新登录ToolStripMenuItem.Name = "重新登录ToolStripMenuItem";
-            this.重新登录ToolStripMenuItem.Size = new System.Drawing.Size(124, 22);
+            this.重新登录ToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.重新登录ToolStripMenuItem.Text = "重新登录";
             this.重新登录ToolStripMenuItem.Click += new System.EventHandler(this.重新登录ToolStripMenuItem_Click);
             // 
             // tsmiClose
             // 
             this.tsmiClose.Name = "tsmiClose";
-            this.tsmiClose.Size = new System.Drawing.Size(124, 22);
+            this.tsmiClose.Size = new System.Drawing.Size(152, 22);
             this.tsmiClose.Text = "退出";
             this.tsmiClose.Click += new System.EventHandler(this.tsmiClose_Click);
             // 
