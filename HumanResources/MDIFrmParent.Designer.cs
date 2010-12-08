@@ -77,7 +77,12 @@
             this.周报ToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.顾问周报ToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.助理周报ToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.助理周报设置ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.顾问周报设置ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.关于ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.提醒ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.提醒ToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.提醒设置ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.panel1 = new System.Windows.Forms.Panel();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
             this.label39 = new System.Windows.Forms.Label();
@@ -142,8 +147,6 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.groupBox6 = new System.Windows.Forms.GroupBox();
             this.groupBox5 = new System.Windows.Forms.GroupBox();
-            this.助理周报设置ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.顾问周报设置ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.panel1.SuspendLayout();
             this.groupBox4.SuspendLayout();
@@ -165,7 +168,8 @@
             this.分析ToolStripMenuItem,
             this.评估ToolStripMenuItem1,
             this.周报ToolStripMenuItem1,
-            this.关于ToolStripMenuItem});
+            this.关于ToolStripMenuItem,
+            this.提醒ToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(1018, 25);
@@ -507,22 +511,59 @@
             // 顾问周报ToolStripMenuItem1
             // 
             this.顾问周报ToolStripMenuItem1.Name = "顾问周报ToolStripMenuItem1";
-            this.顾问周报ToolStripMenuItem1.Size = new System.Drawing.Size(152, 22);
+            this.顾问周报ToolStripMenuItem1.Size = new System.Drawing.Size(148, 22);
             this.顾问周报ToolStripMenuItem1.Text = "顾问周报";
             this.顾问周报ToolStripMenuItem1.Click += new System.EventHandler(this.顾问周报ToolStripMenuItem1_Click);
             // 
             // 助理周报ToolStripMenuItem1
             // 
             this.助理周报ToolStripMenuItem1.Name = "助理周报ToolStripMenuItem1";
-            this.助理周报ToolStripMenuItem1.Size = new System.Drawing.Size(152, 22);
+            this.助理周报ToolStripMenuItem1.Size = new System.Drawing.Size(148, 22);
             this.助理周报ToolStripMenuItem1.Text = "助理周报";
             this.助理周报ToolStripMenuItem1.Click += new System.EventHandler(this.助理周报ToolStripMenuItem1_Click);
+            // 
+            // 助理周报设置ToolStripMenuItem
+            // 
+            this.助理周报设置ToolStripMenuItem.Name = "助理周报设置ToolStripMenuItem";
+            this.助理周报设置ToolStripMenuItem.Size = new System.Drawing.Size(148, 22);
+            this.助理周报设置ToolStripMenuItem.Text = "助理周报设置";
+            this.助理周报设置ToolStripMenuItem.Click += new System.EventHandler(this.助理周报设置ToolStripMenuItem_Click);
+            // 
+            // 顾问周报设置ToolStripMenuItem
+            // 
+            this.顾问周报设置ToolStripMenuItem.Name = "顾问周报设置ToolStripMenuItem";
+            this.顾问周报设置ToolStripMenuItem.Size = new System.Drawing.Size(148, 22);
+            this.顾问周报设置ToolStripMenuItem.Text = "顾问周报设置";
+            this.顾问周报设置ToolStripMenuItem.Click += new System.EventHandler(this.顾问周报设置ToolStripMenuItem_Click);
             // 
             // 关于ToolStripMenuItem
             // 
             this.关于ToolStripMenuItem.Name = "关于ToolStripMenuItem";
             this.关于ToolStripMenuItem.Size = new System.Drawing.Size(44, 21);
             this.关于ToolStripMenuItem.Text = "关于";
+            // 
+            // 提醒ToolStripMenuItem
+            // 
+            this.提醒ToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.提醒ToolStripMenuItem1,
+            this.提醒设置ToolStripMenuItem});
+            this.提醒ToolStripMenuItem.Name = "提醒ToolStripMenuItem";
+            this.提醒ToolStripMenuItem.Size = new System.Drawing.Size(44, 21);
+            this.提醒ToolStripMenuItem.Text = "提醒";
+            // 
+            // 提醒ToolStripMenuItem1
+            // 
+            this.提醒ToolStripMenuItem1.Name = "提醒ToolStripMenuItem1";
+            this.提醒ToolStripMenuItem1.Size = new System.Drawing.Size(152, 22);
+            this.提醒ToolStripMenuItem1.Text = "添加提醒内容";
+            this.提醒ToolStripMenuItem1.Click += new System.EventHandler(this.提醒ToolStripMenuItem1_Click);
+            // 
+            // 提醒设置ToolStripMenuItem
+            // 
+            this.提醒设置ToolStripMenuItem.Name = "提醒设置ToolStripMenuItem";
+            this.提醒设置ToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.提醒设置ToolStripMenuItem.Text = "提醒设置";
+            this.提醒设置ToolStripMenuItem.Click += new System.EventHandler(this.提醒设置ToolStripMenuItem_Click);
             // 
             // panel1
             // 
@@ -1196,7 +1237,7 @@
             // 
             // groupBox6
             // 
-            this.groupBox6.Location = new System.Drawing.Point(8, 206);
+            this.groupBox6.Location = new System.Drawing.Point(8, 315);
             this.groupBox6.Name = "groupBox6";
             this.groupBox6.Size = new System.Drawing.Size(162, 196);
             this.groupBox6.TabIndex = 1;
@@ -1208,24 +1249,10 @@
             this.groupBox5.BackColor = System.Drawing.Color.White;
             this.groupBox5.Location = new System.Drawing.Point(8, 3);
             this.groupBox5.Name = "groupBox5";
-            this.groupBox5.Size = new System.Drawing.Size(162, 194);
+            this.groupBox5.Size = new System.Drawing.Size(162, 303);
             this.groupBox5.TabIndex = 0;
             this.groupBox5.TabStop = false;
             this.groupBox5.Text = "信息提示框";
-            // 
-            // 助理周报设置ToolStripMenuItem
-            // 
-            this.助理周报设置ToolStripMenuItem.Name = "助理周报设置ToolStripMenuItem";
-            this.助理周报设置ToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
-            this.助理周报设置ToolStripMenuItem.Text = "助理周报设置";
-            this.助理周报设置ToolStripMenuItem.Click += new System.EventHandler(this.助理周报设置ToolStripMenuItem_Click);
-            // 
-            // 顾问周报设置ToolStripMenuItem
-            // 
-            this.顾问周报设置ToolStripMenuItem.Name = "顾问周报设置ToolStripMenuItem";
-            this.顾问周报设置ToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
-            this.顾问周报设置ToolStripMenuItem.Text = "顾问周报设置";
-            this.顾问周报设置ToolStripMenuItem.Click += new System.EventHandler(this.顾问周报设置ToolStripMenuItem_Click);
             // 
             // MDIFrmParent
             // 
@@ -1240,6 +1267,7 @@
             this.Name = "MDIFrmParent";
             this.Text = "标尺人力资源管理系统";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.Load += new System.EventHandler(this.MDIFrmParent_Load);
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.MDIFrmParent_FormClosed);
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.MDIFrmParent_FormClosing);
             this.menuStrip1.ResumeLayout(false);
@@ -1375,6 +1403,9 @@
         private System.Windows.Forms.GroupBox groupBox5;
         private System.Windows.Forms.ToolStripMenuItem 助理周报设置ToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem 顾问周报设置ToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem 提醒ToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem 提醒ToolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem 提醒设置ToolStripMenuItem;
     }
 }
 

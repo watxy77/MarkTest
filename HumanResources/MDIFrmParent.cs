@@ -16,6 +16,8 @@ using HumanResources.Candidate;
 
 using HumanResources.Users;
 using HumanResources.WeekReport;
+using HumanResources.Alert;
+
 
 namespace HumanResources
 {
@@ -213,6 +215,25 @@ namespace HumanResources
         private void 顾问周报设置ToolStripMenuItem_Click(object sender, EventArgs e)
         {
             wekklySetC aa = new wekklySetC();
+            aa.MdiParent = this;
+            aa.Show();
+        }
+
+        private void 提醒ToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            AlertInfoForm aa = new AlertInfoForm();
+            aa.MdiParent = this;
+            aa.Show();
+        }
+
+        private void MDIFrmParent_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void 提醒设置ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            AlertSetForm aa = new AlertSetForm();
             aa.MdiParent = this;
             aa.Show();
         }

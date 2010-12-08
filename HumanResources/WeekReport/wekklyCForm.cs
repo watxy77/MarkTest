@@ -32,7 +32,7 @@ namespace HumanResources.WeekReport
         Excel.Range range1;
         Excel.Range range2;
         Excel.TextBox textBox;
-        private int sheetCount = 1;			//WorkSheet数量
+        //private int sheetCount = 1;			//WorkSheet数量
         private string sheetPrefixName = "页";	
         private int u_id;
         private string  user_realName;

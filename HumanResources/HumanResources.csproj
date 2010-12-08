@@ -60,6 +60,27 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Alert\AlertInfoForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Alert\AlertInfoForm.Designer.cs">
+      <DependentUpon>AlertInfoForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Alert\AlertContentForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Alert\AlertContentForm.designer.cs">
+      <DependentUpon>AlertContentForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Alert\TaskbarNotifier.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Alert\AlertSetForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Alert\AlertSetForm.Designer.cs">
+      <DependentUpon>AlertSetForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Analysis\FrmAnalysisOfCustomerDevelopment.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -189,6 +210,12 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>humanresourcesDataSet.xsd</DependentUpon>
     </Compile>
+    <Compile Include="HumanResourcesInfo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HumanResourcesInfo.Designer.cs">
+      <DependentUpon>HumanResourcesInfo.cs</DependentUpon>
+    </Compile>
     <Compile Include="Invoice\FrmInvoiceAdd.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -251,6 +278,14 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Alert\AlertContentForm.resx">
+      <DependentUpon>AlertContentForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Alert\TaskbarNotifier.resx">
+      <DependentUpon>TaskbarNotifier.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
     <EmbeddedResource Include="Analysis\FrmAnalysisOfCustomerDevelopment.resx">
       <DependentUpon>FrmAnalysisOfCustomerDevelopment.cs</DependentUpon>
       <SubType>Designer</SubType>
@@ -329,6 +364,10 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Dictionary\FrmTradeSelect.resx">
       <DependentUpon>FrmTradeSelect.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HumanResourcesInfo.resx">
+      <DependentUpon>HumanResourcesInfo.cs</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="Invoice\FrmInvoiceAdd.resx">
@@ -578,6 +617,24 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\gif_48_059.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Alert\AlertInfoForm.resx">
+      <DependentUpon>AlertInfoForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Alert\AlertSetForm.resx">
+      <DependentUpon>AlertSetForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Alert\close.bmp" />
+    <EmbeddedResource Include="Alert\close2.bmp" />
+    <Content Include="Alert\ShowTaskForm.csproj" />
+    <EmbeddedResource Include="Alert\TaskFormBack.bmp" />
+    <EmbeddedResource Include="Alert\skin.bmp" />
+    <EmbeddedResource Include="Alert\skin2.bmp" />
+    <EmbeddedResource Include="Alert\skin3.bmp" />
+    <Content Include="skin.bmp" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
